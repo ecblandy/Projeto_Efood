@@ -9,10 +9,12 @@ type ProductCartType = {
 
 type ProductCart = {
   itens: ProductCartType[]
+  precoTotal: number
 }
 
 const initialState: ProductCart = {
-  itens: []
+  itens: [],
+  precoTotal: 0
 }
 
 const CartReducer = createSlice({
@@ -23,13 +25,19 @@ const CartReducer = createSlice({
       const itemAtual = action.payload
       const verificado = state.itens.find((item) => item.id === itemAtual.id)
       if (!verificado) {
-        state.itens.push(itemAtual)
+        state.itens = [...state.itens, itemAtual]
+        state.precoTotal += itemAtual.preco
       }
     },
     removeCart: (state, action: PayloadAction<{ id: number }>) => {
-      state.itens = [
-        ...state.itens.filter((item) => item.id !== action.payload.id)
-      ]
+      const itemIndex = state.itens.findIndex(
+        (item) => item.id === action.payload.id
+      )
+      if (itemIndex >= 0) {
+        const itemRemovido = state.itens[itemIndex]
+        state.itens.splice(itemIndex, 1)
+        state.precoTotal -= itemRemovido.preco
+      }
     }
   }
 })

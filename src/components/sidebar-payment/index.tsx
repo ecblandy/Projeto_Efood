@@ -1,8 +1,17 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import * as S from '../../styles'
 import Button from '../button'
 import { ContainerPayment } from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
+import { RootReducer } from '../../store'
+
+const paraReal = (valor: number) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(valor)
+}
+
 const SidebarPayment = () => {
   const dispatch = useDispatch()
   function sidebarChange(value: string) {
@@ -12,9 +21,11 @@ const SidebarPayment = () => {
       })
     )
   }
+  const { precoTotal } = useSelector((state: RootReducer) => state.cart)
+
   return (
     <ContainerPayment>
-      <h4>Pagamento - Valor a pagar {}</h4>
+      <h4>Pagamento - Valor a pagar {paraReal(precoTotal)}</h4>
       <S.FormDeliveryAndPayment>
         <S.DeliveryAndPaymentLabel htmlFor="cardName">
           Nome do cartão
