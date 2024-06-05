@@ -6,6 +6,7 @@ export const CardProduct = styled.div`
   padding: 8px;
   width: 320px;
   height: 338px;
+  margin-bottom: 32px;
 
   img {
     width: 100%;

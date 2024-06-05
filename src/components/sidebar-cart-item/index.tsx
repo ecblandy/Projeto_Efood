@@ -13,7 +13,6 @@ export type Props = {
 
 const SidebarItem = ({ image, title, id, preco }: Props) => {
   const dispatch = useDispatch()
-
   function removeItem() {
     dispatch(removeCart({ id: id }))
   }

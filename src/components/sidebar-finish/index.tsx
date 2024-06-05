@@ -3,7 +3,12 @@ import Button from '../button'
 import * as S from './styles'
 import { useDispatch } from 'react-redux'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
-import { openOrCloseSidebar } from '../../store/reducer/modal-and-sidebar'
+import {
+  closeModal,
+  openOrCloseSidebar
+} from '../../store/reducer/modal-and-sidebar'
+import { clearCart } from '../../store/reducer/cart'
+
 const SidebarFinish = () => {
   const dispatch = useDispatch()
   function sidebarChange(value: string) {
@@ -12,8 +17,10 @@ const SidebarFinish = () => {
         currentSidebar: value as 'cart' | 'delivery' | 'payment' | 'finish'
       })
     )
+    dispatch(clearCart())
 
     dispatch(openOrCloseSidebar({ sidebarIsOpen: false }))
+    dispatch(closeModal({ modalIsOpen: false }))
   }
   return (
     <S.ContainerFinish>

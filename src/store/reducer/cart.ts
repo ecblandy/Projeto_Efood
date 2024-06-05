@@ -38,9 +38,13 @@ const CartReducer = createSlice({
         state.itens.splice(itemIndex, 1)
         state.precoTotal -= itemRemovido.preco
       }
+    },
+    clearCart: (state) => {
+      state.itens = []
+      state.precoTotal = 0
     }
   }
 })
 
 export default CartReducer.reducer
-export const { addCart, removeCart } = CartReducer.actions
+export const { addCart, removeCart, clearCart } = CartReducer.actions
