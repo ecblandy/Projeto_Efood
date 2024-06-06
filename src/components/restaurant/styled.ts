@@ -11,6 +11,8 @@ export const Card = styled.div`
   position: relative;
   img {
     height: 217px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .infos {
@@ -56,6 +58,7 @@ export const TitleDiv = styled.div`
 export const Description = styled.p`
   font-size: 14px; /* Ajuste dinâmico do tamanho da fonte */
   color: ${Cores.pink};
+  max-width: 456px;
   line-height: 20px;
   font-weight: 400;
   padding: 8px;

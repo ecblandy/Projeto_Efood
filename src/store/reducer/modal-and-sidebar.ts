@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import ProductsType from '../../models/product-model'
+import { PropsProduct } from '../../components/product'
 
 type Modal = {
   modalIsOpen: boolean
   sidebarIsOpen: boolean
-  currentProduct: ProductsType | null
+  currentProduct: PropsProduct | null
 }
 
 const initialState: Modal = {
@@ -19,7 +19,7 @@ const ModalAndSidebar = createSlice({
   reducers: {
     openModal: (
       state,
-      action: PayloadAction<{ modalIsOpen: boolean; product: ProductsType }>
+      action: PayloadAction<{ modalIsOpen: boolean; product: PropsProduct }>
     ) => {
       state.modalIsOpen = action.payload.modalIsOpen
       state.currentProduct = action.payload.product

@@ -6,12 +6,13 @@ export const ProductContainer = styled.div`
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
   width: 1024px;
+  gap: 32px;
 `
 
 export const SectionContainer = styled.section`
-  margin: 120px 170px;
-  background-color: ${Cores.body};
+  padding: 120px 170px;
   display: flex;
+  background-color: ${Cores.body};
   justify-content: center;
   align-items: center;
 `

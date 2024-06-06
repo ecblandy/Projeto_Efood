@@ -19,16 +19,23 @@ export const ImageDivModal = styled.div`
   width: 280px;
   margin-right: 24px;
   img {
-    height: 100%;
+    height: 280px;
     width: 280px;
+    object-fit: cover;
   }
 `
 export const TitleModal = styled(TitleCard)`
   color: ${Cores.corPrincipal};
+  font-size: 18px;
+  line-height: 21px;
+  margin-bottom: 16px;
 `
 export const DescriptionModal = styled(DescriptionCard)`
   color: ${Cores.corPrincipal};
   line-height: 22px;
+  width: 658px;
+  height: 178px;
+  margin: 0;
 `
 
 export const ModalInfo = styled.div`

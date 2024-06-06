@@ -1,13 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux'
 import Button from '../button'
-import { RootReducer } from '../../store'
 import SidebarItem from '../sidebar-cart-item'
 import * as S from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
+import { useGetRestaurantsQuery } from '../../services/api'
+import { RootReducer } from '../../store'
 
 const SidebarCart = () => {
-  const { itens, precoTotal } = useSelector((state: RootReducer) => state.cart)
+  const { data } = useGetRestaurantsQuery()
   const dispatch = useDispatch()
+  const { precoTotal } = useSelector((state: RootReducer) => state.cart)
+  const { itens } = useSelector((state: RootReducer) => state.cart)
+  if (!data) {
+    return <h2>ola</h2>
+  }
 
   const paraReal = (valor: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -26,15 +32,10 @@ const SidebarCart = () => {
 
   return (
     <div>
-      {itens.map(({ image, title, id, preco }) => (
-        <SidebarItem
-          key={id}
-          image={image}
-          title={title}
-          id={id}
-          preco={preco}
-        />
+      {itens.map(({ id, foto, nome, preco }) => (
+        <SidebarItem key={id} foto={foto} nome={nome} id={id} preco={preco} />
       ))}
+
       <S.InfoContainer>
         <div>
           <S.InfoValue>Valor total</S.InfoValue>

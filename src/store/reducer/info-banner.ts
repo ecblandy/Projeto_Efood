@@ -2,12 +2,14 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 type GetInfos = {
   titleBanner: string
-  infoBanner: string[]
+  infoBanner: string
+  imageBanner: string
 }
 
 const initialState: GetInfos = {
   titleBanner: '',
-  infoBanner: ['']
+  infoBanner: '',
+  imageBanner: ''
 }
 
 const GetInfosReducer = createSlice({
@@ -17,6 +19,7 @@ const GetInfosReducer = createSlice({
     getText: (state, action: PayloadAction<GetInfos>) => {
       state.infoBanner = action.payload.infoBanner
       state.titleBanner = action.payload.titleBanner
+      state.imageBanner = action.payload.imageBanner
     }
   }
 })

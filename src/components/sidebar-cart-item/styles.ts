@@ -7,8 +7,6 @@ export const ModalCartItem = styled.div`
   margin: 32px 8px 16px 8px;
   display: flex;
   position: relative;
-  img {
-  }
 
   h4 {
     font-size: 18px;
@@ -27,8 +25,10 @@ export const LixeiraCartItem = styled.img`
   right: 8px;
   bottom: 8px;
   height: 16px;
+  cursor: pointer;
 `
 export const ProductImage = styled.img`
   height: 80px;
+  width: 80px;
   margin-right: 8px;
 `

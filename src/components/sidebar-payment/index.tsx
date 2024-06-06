@@ -5,7 +5,7 @@ import { ContainerPayment } from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import { RootReducer } from '../../store'
 
-const paraReal = (valor: number) => {
+export const paraReal = (valor: number) => {
   return new Intl.NumberFormat('pt-BR', {
     style: 'currency',
     currency: 'BRL'

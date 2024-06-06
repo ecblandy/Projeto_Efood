@@ -1,8 +1,8 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
 type ProductCartType = {
-  title: string
-  image: string
+  nome: string
+  foto: string
   preco: number
   id: number
 }

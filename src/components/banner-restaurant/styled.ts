@@ -8,6 +8,8 @@ export const BannerRestaurant = styled.div`
     flex-direction: column;
     img {
       width: 100%;
+      height: 280px;
+      object-fit: cover;
     }
   }
 `
