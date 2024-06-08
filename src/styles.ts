@@ -16,6 +16,10 @@ export const GlobalStyle = createGlobalStyle`
   font-family: 'Roboto';
   list-style: none;
 }
+
+body {
+    background-color: ${Cores.body};
+}
 `
 
 export const FormDeliveryAndPayment = styled.form`

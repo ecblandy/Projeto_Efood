@@ -1,6 +1,5 @@
-import * as S from './styled'
-
 import { useSelector } from 'react-redux'
+import * as S from './styled'
 import { RootReducer } from '../../store'
 
 const Banner = () => {
@@ -9,18 +8,16 @@ const Banner = () => {
   )
 
   return (
-    <S.BannerRestaurant>
-      <div className="image-container">
-        <img src={imageBanner} alt="Banner imagem" />
-        <S.DarkDiv></S.DarkDiv>
-        <S.DivInfo>
-          <S.ContainerInfo>
-            <S.Info>{infoBanner}</S.Info>
-          </S.ContainerInfo>
-          <S.Title>{titleBanner}</S.Title>
-        </S.DivInfo>
-      </div>
-    </S.BannerRestaurant>
+    <S.BackgroundDivImg style={{ backgroundImage: `url(${imageBanner})` }}>
+      <S.Container>
+        <S.DivContent>
+          <div>
+            <span key={infoBanner}>{infoBanner}</span>
+          </div>
+          <h2>{titleBanner}</h2>
+        </S.DivContent>
+      </S.Container>
+    </S.BackgroundDivImg>
   )
 }
 export default Banner

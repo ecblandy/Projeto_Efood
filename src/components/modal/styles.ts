@@ -13,6 +13,7 @@ export const ModalCard = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
+  z-index: 1;
 `
 
 export const ImageDivModal = styled.div`
