@@ -10,7 +10,7 @@ export const ProductContainer = styled.div`
 
 export const SectionContainer = styled.section`
   margin: 120px 170px;
-  background-color: ${Cores.body};
+
   display: flex;
   justify-content: center;
   align-items: center;

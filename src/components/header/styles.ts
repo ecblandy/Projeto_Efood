@@ -8,6 +8,13 @@ export const HeaderContainer = styled.header<Props>`
   background-image: url(${bannerImg});
   width: 100%;
   height: ${(props) => (props.isprofilepage === 'profile' ? '186px' : '384px')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .container {
+    max-width: 1024px;
+    width: 100%;
+  }
 `
 export const EfoodLogo = styled.img`
   width: 124px;
@@ -16,7 +23,7 @@ export const EfoodLogo = styled.img`
 export const ProfileHeader = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   padding-top: 64px;
 
   button {

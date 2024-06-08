@@ -1,26 +1,26 @@
-import * as S from './styled'
-import logoStore from '../../assets/img/apresentacao.png'
 import { useSelector } from 'react-redux'
+import BannerImgBackground from '../../assets/img/apresentacao.png'
+import * as S from './styled'
 import { RootReducer } from '../../store'
 const Banner = () => {
   const { infoBanner, titleBanner } = useSelector(
     (state: RootReducer) => state.getInfosBanner
   )
   return (
-    <S.BannerRestaurant>
-      <div className="image-container">
-        <img src={logoStore} alt="" />
-        <S.DarkDiv></S.DarkDiv>
-        <S.DivInfo>
-          <S.ContainerInfo>
+    <S.BackgroundDivImg
+      style={{ backgroundImage: `url(${BannerImgBackground})` }}
+    >
+      <S.Container>
+        <S.DivContent>
+          <div>
             {infoBanner.map((info) => (
-              <S.Info key={info}>{info}</S.Info>
+              <span key={info}>{info}</span>
             ))}
-          </S.ContainerInfo>
-          <S.Title>{titleBanner}</S.Title>
-        </S.DivInfo>
-      </div>
-    </S.BannerRestaurant>
+          </div>
+          <h2>{titleBanner}</h2>
+        </S.DivContent>
+      </S.Container>
+    </S.BackgroundDivImg>
   )
 }
 export default Banner

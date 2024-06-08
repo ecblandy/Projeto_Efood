@@ -26,7 +26,7 @@ const Header = ({ isprofilepage }: Props) => {
   return (
     <S.HeaderContainer isprofilepage={isprofilepage}>
       {isprofilepage === 'profile' ? (
-        <S.ProfileHeader>
+        <S.ProfileHeader className="container">
           <Link to="/">Restaurantes</Link>
           <S.EfoodLogo src={logo} alt="logo efood" />
           <Button clicked={showSidebar}>
