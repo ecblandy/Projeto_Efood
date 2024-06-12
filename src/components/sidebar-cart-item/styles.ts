@@ -1,23 +1,23 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const ModalCartItem = styled.div`
   padding: 8px 8px 12px;
-  background-color: ${Cores.footer};
+  background-color: ${colors.footer};
   margin: 32px 8px 16px 8px;
   display: flex;
   position: relative;
 
   h4 {
     font-size: 18px;
-    color: ${Cores.pink};
+    color: ${colors.backgroundColor};
     margin-bottom: 16px;
   }
 
   span {
     font-weight: 400;
     font-size: 14px;
-    color: ${Cores.pink};
+    color: ${colors.backgroundColor};
   }
 `
 export const LixeiraCartItem = styled.img`

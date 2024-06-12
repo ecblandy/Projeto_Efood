@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 import { Props } from '.'
 export const Span = styled.span<Omit<Props, 'home' | 'restaurante'>>`
   line-height: 42px;
-  color: ${Cores.pink};
+  color: ${colors.backgroundColor};
   margin-bottom: ${(props) => (props.page === 'home' ? '40px' : '')};
   font-size: ${(props) => {
     switch (props.size) {

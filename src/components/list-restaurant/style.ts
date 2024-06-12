@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const ContainerCards = styled.section`
   padding: 80px 171px;
-  background-color: ${Cores.body};
+  background-color: ${colors.tertiaryColor};
   ul {
     display: flex;
     flex-wrap: wrap;

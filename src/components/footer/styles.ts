@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 import { EfoodLogo } from '../header/styles'
 
 export const FooterContainer = styled.footer`
-  background-color: ${Cores.footer};
+  background-color: ${colors.footer};
   width: 100%;
   height: 298px;
   display: flex;
@@ -24,7 +24,7 @@ export const BrandContainer = styled.ul`
 `
 
 export const TextFooter = styled.p`
-  color: ${Cores.pink};
+  color: ${colors.backgroundColor};
   font-weight: 400;
   font-size: 10px;
   line-height: 22px;

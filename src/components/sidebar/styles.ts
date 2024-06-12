@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 import { CloseModal } from '../modal/styles'
 
 export const Sidebar = styled.div`
-  background-color: ${Cores.pink};
+  background-color: ${colors.backgroundColor};
   width: 360px;
   height: 100vh;
   position: fixed;

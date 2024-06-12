@@ -1,11 +1,11 @@
 import { styled, createGlobalStyle } from 'styled-components'
 
-export const Cores = {
-  pink: '#E66767',
-  corPrincipal: '#fff',
-  footer: '#FFEBD9',
-  body: '#fff8f0',
-  corSecundaria: '#4B4B4B'
+export const colors = {
+  mainColor: '#fff',
+  secondaryColor: '#4B4B4B',
+  tertiaryColor: '#fff8f0',
+  backgroundColor: '#E66767',
+  footer: '#FFEBD9'
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -18,7 +18,7 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-    background-color: ${Cores.body};
+    background-color: ${colors.tertiaryColor};
 }
 `
 
@@ -31,8 +31,8 @@ export const FormDeliveryAndPayment = styled.form`
 export const DeliveryAndPaymentInput = styled.input`
   height: 32px;
   width: 100%;
-  background-color: ${Cores.body};
-  color: ${Cores.corSecundaria};
+  background-color: ${colors.tertiaryColor};
+  color: ${colors.secondaryColor};
   font-size: 14px;
   line-height: 16px;
   font-weight: 700;
@@ -45,7 +45,7 @@ export const DeliveryAndPaymentLabel = styled.label`
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
-  color: ${Cores.body};
+  color: ${colors.tertiaryColor};
 `
 export const DeliveryAndPaymentUl = styled.ul`
   display: flex;

@@ -15,18 +15,15 @@ const Products = () => {
     <S.SectionContainer>
       <S.ProductContainer>
         {cardapio.map((item) => (
-          <>
-            {console.log(item)}
-            <Product
-              id={item.id}
-              descricao={item.descricao}
-              foto={item.foto}
-              nome={item.nome}
-              porcao={item.porcao}
-              preco={item.preco}
-              key={item.id}
-            />
-          </>
+          <Product
+            id={item.id}
+            descricao={item.descricao}
+            foto={item.foto}
+            nome={item.nome}
+            porcao={item.porcao}
+            preco={item.preco}
+            key={item.id}
+          />
         ))}
       </S.ProductContainer>
     </S.SectionContainer>

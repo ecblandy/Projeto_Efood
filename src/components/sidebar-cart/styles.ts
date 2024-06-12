@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 export const InfoContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -14,8 +14,8 @@ export const InfoContainer = styled.div`
   }
 
   button {
-    background-color: ${Cores.body};
-    color: ${Cores.pink};
+    background-color: ${colors.tertiaryColor};
+    color: ${colors.backgroundColor};
     font-size: 14px;
     margin: 0;
     height: 24px;
@@ -23,7 +23,7 @@ export const InfoContainer = styled.div`
   }
 `
 export const InfoValue = styled.span`
-  color: ${Cores.footer};
+  color: ${colors.footer};
   font-size: 14px;
   font-weight: 700;
 `

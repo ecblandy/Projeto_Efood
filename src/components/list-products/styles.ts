@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const ProductContainer = styled.div`
   display: grid;
@@ -12,13 +12,13 @@ export const ProductContainer = styled.div`
 export const SectionContainer = styled.section`
   margin: 120px 170px;
   display: flex;
-  background-color: ${Cores.body};
+  background-color: ${colors.tertiaryColor};
   justify-content: center;
   align-items: center;
 `
 
 export const SelectProduct = styled.div`
-  background-color: ${Cores.pink};
+  background-color: ${colors.backgroundColor};
   width: 1024px;
   height: 344px;
 `

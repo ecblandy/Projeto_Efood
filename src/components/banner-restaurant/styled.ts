@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const BackgroundDivImg = styled.div`
   width: 100%;
@@ -36,7 +36,7 @@ export const DivContent = styled.div`
   height: 100%;
   font-size: 32px;
   line-height: 37px;
-  color: ${Cores.corPrincipal};
+  color: ${colors.mainColor};
   div {
     margin-top: 25px;
     span {

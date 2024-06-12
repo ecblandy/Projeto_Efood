@@ -1,7 +1,7 @@
 import { styled } from 'styled-components'
 import { Props } from '.'
 import bannerImg from '../../assets/img/Vector.png'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 
 export const HeaderContainer = styled.header<Props>`
   background-size: cover;
@@ -27,7 +27,7 @@ export const ProfileHeader = styled.div`
   padding-top: 64px;
 
   button {
-    background-color: ${Cores.footer};
+    background-color: ${colors.footer};
     width: 256px;
   }
 
@@ -35,7 +35,7 @@ export const ProfileHeader = styled.div`
     font-weight: 900;
     font-size: 18px;
     line-height: 21px;
-    color: ${Cores.pink};
+    color: ${colors.backgroundColor};
     text-decoration: none;
   }
 `
@@ -45,7 +45,7 @@ export const SpanProfile = styled.span`
   font-size: 18px;
   width: 100%;
   line-height: 21px;
-  color: ${Cores.pink};
+  color: ${colors.backgroundColor};
   text-decoration: none;
 `
 
@@ -66,6 +66,6 @@ export const SpanHome = styled.span`
   font-weight: 900;
   font-size: 36px;
   line-height: 42px;
-  color: ${Cores.pink};
+  color: ${colors.backgroundColor};
   text-align: center;
 `

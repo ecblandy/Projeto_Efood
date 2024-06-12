@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { Cores } from '../../styles'
+import { colors } from '../../styles'
 import { DescriptionCard, TitleCard } from '../product/styles'
 
 export const ModalCard = styled.div`
-  background-color: ${Cores.pink};
-  color: ${Cores.corPrincipal};
+  background-color: ${colors.backgroundColor};
+  color: ${colors.mainColor};
   padding: 32px;
   width: 1024px;
   height: 344px;
@@ -26,13 +26,13 @@ export const ImageDivModal = styled.div`
   }
 `
 export const TitleModal = styled(TitleCard)`
-  color: ${Cores.corPrincipal};
+  color: ${colors.mainColor};
   font-size: 18px;
   line-height: 21px;
   margin-bottom: 16px;
 `
 export const DescriptionModal = styled(DescriptionCard)`
-  color: ${Cores.corPrincipal};
+  color: ${colors.mainColor};
   line-height: 22px;
   width: 658px;
   height: 178px;
@@ -41,8 +41,8 @@ export const DescriptionModal = styled(DescriptionCard)`
 
 export const ModalInfo = styled.div`
   button {
-    background-color: ${Cores.body};
-    color: ${Cores.pink};
+    background-color: ${colors.tertiaryColor};
+    color: ${colors.backgroundColor};
     font-size: 14px;
     width: 218px;
     margin: 0;
