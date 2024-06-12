@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-
+import { CardapioProps } from '../../components/list-restaurant'
 type GetInfos = {
   titleBanner: string
   infoBanner: string
   imageBanner: string
+  cardapio?: CardapioProps[]
 }
 
 const initialState: GetInfos = {
   titleBanner: '',
   infoBanner: '',
-  imageBanner: ''
+  imageBanner: '',
+  cardapio: []
 }
 
 const GetInfosReducer = createSlice({
@@ -20,6 +22,7 @@ const GetInfosReducer = createSlice({
       state.infoBanner = action.payload.infoBanner
       state.titleBanner = action.payload.titleBanner
       state.imageBanner = action.payload.imageBanner
+      state.cardapio = action.payload.cardapio
     }
   }
 })

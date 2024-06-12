@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import modalAndSidebar from './reducer/modal-and-sidebar'
 import currentSidebar from './reducer/what-sidebar-is'
 import cart from './reducer/cart'
-import getInfosReducer from './reducer/info-banner'
+import getInfosReducer from './reducer/infos'
 import RestaurantReducer from './reducer/restaurants'
 import API from '../services/api'
 const store = configureStore({

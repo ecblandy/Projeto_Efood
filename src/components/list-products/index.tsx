@@ -1,28 +1,30 @@
 // import { useState } from 'react'
 import * as S from './styles'
 import Product from '../product'
-import { useGetRestaurantsQuery } from '../../services/api'
+import { useSelector } from 'react-redux'
+import { RootReducer } from '../../store'
 const Products = () => {
-  const { data } = useGetRestaurantsQuery()
-  if (!data) {
-    return <h2>Carregando ...</h2>
+  const { cardapio } = useSelector((state: RootReducer) => state.getInfosBanner)
+  if (!cardapio) {
+    return <h1>Carregando...</h1>
   }
   return (
     <S.SectionContainer>
       <S.ProductContainer>
-        {data.map(
-          ({ cardapio: [{ descricao, foto, id, nome, preco, porcao }] }) => (
+        {cardapio.map((item) => (
+          <>
+            {console.log(item)}
             <Product
-              key={id}
-              id={id}
-              foto={foto}
-              nome={nome}
-              descricao={descricao}
-              preco={preco}
-              porcao={porcao}
+              id={item.id}
+              descricao={item.descricao}
+              foto={item.foto}
+              nome={item.nome}
+              porcao={item.porcao}
+              preco={item.preco}
+              key={item.id}
             />
-          )
-        )}
+          </>
+        ))}
       </S.ProductContainer>
     </S.SectionContainer>
   )
