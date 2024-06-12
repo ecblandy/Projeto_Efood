@@ -1,19 +1,11 @@
-import * as S from './styles'
-
+import { useDispatch, useSelector } from 'react-redux'
+// COMPONENTS
 import Modal from '../modal'
 import Button from '../button'
-import { useDispatch, useSelector } from 'react-redux'
+// UTILS
 import { RootReducer } from '../../store'
 import { closeModal, openModal } from '../../store/reducer/modal-and-sidebar'
-
-export type PropsProduct = {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
+import * as S from './styles'
 
 const Product = ({
   foto,

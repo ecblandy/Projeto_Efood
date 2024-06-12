@@ -1,10 +1,12 @@
-import * as S from './styles'
-import Button from '../button'
-import closeButton from '../../assets/img/close1.png'
 import { useDispatch, useSelector } from 'react-redux'
+// COMPONENTS
+import Button from '../button'
+// UTILS
 import { RootReducer } from '../../store'
-import { PropsProduct } from '../product'
 import { addCart } from '../../store/reducer/cart'
+import closeButton from '../../assets/img/close1.png'
+import * as S from './styles'
+
 type Props = {
   onClose: (value: boolean) => void
 }

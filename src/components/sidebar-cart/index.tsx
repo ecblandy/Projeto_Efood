@@ -1,10 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux'
+// COMPONENTS
 import Button from '../button'
 import SidebarItem from '../sidebar-cart-item'
+// UTILS
 import * as S from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import { useGetRestaurantsQuery } from '../../services/api'
 import { RootReducer } from '../../store'
+import { paraReal } from '../../utils'
 
 const SidebarCart = () => {
   const { data } = useGetRestaurantsQuery()
@@ -13,13 +16,6 @@ const SidebarCart = () => {
   const { itens } = useSelector((state: RootReducer) => state.cart)
   if (!data) {
     return <h2>ola</h2>
-  }
-
-  const paraReal = (valor: number) => {
-    return new Intl.NumberFormat('pt-BR', {
-      style: 'currency',
-      currency: 'BRL'
-    }).format(valor)
   }
 
   function deliverySidebar(value: string) {

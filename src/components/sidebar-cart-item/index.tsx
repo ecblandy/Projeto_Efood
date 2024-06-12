@@ -1,17 +1,11 @@
+import { useDispatch } from 'react-redux'
+// UTILS
 import * as S from './styles'
 import lixeira from '../../assets/img/lixeira-de-reciclagem 1.png'
-import { useDispatch } from 'react-redux'
 import { removeCart } from '../../store/reducer/cart'
-import { paraReal } from '../sidebar-payment'
+import { paraReal } from '../../utils'
 
-export type Props = {
-  foto: string
-  nome: string
-  preco: number
-  id: number
-}
-
-const SidebarItem = ({ foto, nome, id, preco }: Props) => {
+const SidebarItem = ({ foto, nome, id, preco }: ProductCartType) => {
   const dispatch = useDispatch()
   function removeItem() {
     dispatch(removeCart({ id: id }))

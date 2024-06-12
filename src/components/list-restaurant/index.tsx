@@ -1,17 +1,10 @@
 import { useDispatch } from 'react-redux'
-import { getText } from '../../store/reducer/infos'
+// COMPONENTS
 import Restaurant from '../restaurant'
+// UTILS
 import * as S from './style'
+import { getText } from '../../store/reducer/infos'
 import { useGetRestaurantsQuery } from '../../services/api'
-
-export type CardapioProps = {
-  foto: string
-  preco: number
-  id: number
-  nome: string
-  descricao: string
-  porcao: string
-}
 
 const RestaurantList = () => {
   const dispatch = useDispatch()
@@ -19,7 +12,7 @@ const RestaurantList = () => {
     titulo: string,
     tipo: string,
     capa: string,
-    cardapio: CardapioProps[]
+    cardapio: PropsProduct[]
   ) {
     const res = {
       titleBanner: titulo,

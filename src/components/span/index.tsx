@@ -1,7 +1,5 @@
 import * as S from './styled'
 
-// small = 12px | big = 36px
-
 export type Props = {
   size?: 'small' | 'big'
   children?: React.ReactNode

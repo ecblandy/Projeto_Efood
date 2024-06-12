@@ -1,8 +1,11 @@
 // import { useState } from 'react'
-import * as S from './styles'
-import Product from '../product'
 import { useSelector } from 'react-redux'
+// COMPONENTS
+import Product from '../product'
+// UTILS
 import { RootReducer } from '../../store'
+import * as S from './styles'
+
 const Products = () => {
   const { cardapio } = useSelector((state: RootReducer) => state.getInfosBanner)
   if (!cardapio) {

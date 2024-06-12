@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { CardapioProps } from '../../components/list-restaurant'
+
 type GetInfos = {
   titleBanner: string
   infoBanner: string
   imageBanner: string
-  cardapio?: CardapioProps[]
+  cardapio?: PropsProduct[]
 }
 
 const initialState: GetInfos = {

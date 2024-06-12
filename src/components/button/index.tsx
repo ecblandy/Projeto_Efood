@@ -1,5 +1,6 @@
 import React from 'react'
-import * as S from './styles'
+//UtILS
+import { GlobalButton } from './styles'
 
 type Props = {
   children: React.ReactNode
@@ -7,6 +8,6 @@ type Props = {
 }
 
 const Button = ({ children, clicked }: Props) => (
-  <S.GlobalButton onClick={clicked}>{children}</S.GlobalButton>
+  <GlobalButton onClick={clicked}>{children}</GlobalButton>
 )
 export default Button

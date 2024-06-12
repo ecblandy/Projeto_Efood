@@ -1,8 +1,11 @@
 import { useDispatch } from 'react-redux'
+// COMPONENTS
 import Button from '../button'
+// UTILS
 import * as S from '../../styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import { ContainerDelivery } from './styles'
+
 const SidebarDelivery = () => {
   const dispatch = useDispatch()
   function sidebarChange(value: string) {

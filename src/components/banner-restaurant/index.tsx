@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
-import * as S from './styled'
+// UTILS
 import { RootReducer } from '../../store'
+import * as S from './styled'
 
 const Banner = () => {
   const { infoBanner, titleBanner, imageBanner } = useSelector(

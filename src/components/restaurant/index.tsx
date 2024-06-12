@@ -1,8 +1,10 @@
-// import Tag from '../span'
-import * as S from './styled'
-import Button from '../button'
-import star from '../../assets/img/estrela.png'
 import { Link } from 'react-router-dom'
+// COMPONENTS
+import Button from '../button'
+// UTILS
+import * as S from './styled'
+import star from '../../assets/img/estrela.png'
+
 type Props = {
   image: string
   titulo: string

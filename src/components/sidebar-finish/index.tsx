@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom'
-import Button from '../button'
-import * as S from './styles'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
+// COMPONENTS
+import Button from '../button'
+// UTILS
+import * as S from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import {
   closeModal,

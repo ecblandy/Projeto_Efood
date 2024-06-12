@@ -1,16 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux'
-import * as S from '../../styles'
+// COMPONENTS
 import Button from '../button'
+// UTILS
 import { ContainerPayment } from './styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import { RootReducer } from '../../store'
-
-export const paraReal = (valor: number) => {
-  return new Intl.NumberFormat('pt-BR', {
-    style: 'currency',
-    currency: 'BRL'
-  }).format(valor)
-}
+import { paraReal } from '../../utils/index'
+import * as S from '../../styles'
 
 const SidebarPayment = () => {
   const dispatch = useDispatch()

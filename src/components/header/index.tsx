@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-
-import { RootReducer } from '../../store'
+// COMPONENTS
 import Button from '../button'
-import * as S from './styles'
-import logo from '../../assets/img/logo.png'
 import SideBar from '../sidebar'
+// UTILS
+import { RootReducer } from '../../store'
 import { openOrCloseSidebar } from '../../store/reducer/modal-and-sidebar'
+import logo from '../../assets/img/logo.png'
+import * as S from './styles'
 
 export type Props = {
   isprofilepage?: 'home' | 'profile'

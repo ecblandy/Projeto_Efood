@@ -1,14 +1,17 @@
-import * as S from './styles'
-import closeButton from '../../assets/img/close1.png'
-import Button from '../button'
-// import SidebarCart from '../sidebar-cart'
 import { useDispatch, useSelector } from 'react-redux'
-import { openOrCloseSidebar } from '../../store/reducer/modal-and-sidebar'
-import { RootReducer } from '../../store'
+// COMPONENTS
+import Button from '../button'
 import SidebarDelivery from '../sidebar-delivery'
 import SidebarCart from '../sidebar-cart'
 import SidebarPayment from '../sidebar-payment'
 import SidebarFinish from '../sidebar-finish'
+
+// UTILS
+import closeButton from '../../assets/img/close1.png'
+import { openOrCloseSidebar } from '../../store/reducer/modal-and-sidebar'
+import { RootReducer } from '../../store'
+import * as S from './styles'
+
 const SideBar = () => {
   const { currentSidebar } = useSelector(
     (state: RootReducer) => state.currentSidebar

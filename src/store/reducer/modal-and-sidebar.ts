@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { PropsProduct } from '../../components/product'
 
 type Modal = {
   modalIsOpen: boolean
