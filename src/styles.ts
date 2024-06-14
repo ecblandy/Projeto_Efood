@@ -68,7 +68,7 @@ export const InputGroup = styled.div<InputProps>`
     height: 32px;
     padding: 8px;
     &.is-error {
-      border: 5px solid blue;
+      border: 2px solid red;
     }
   }
 `
