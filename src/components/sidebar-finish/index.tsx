@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 // COMPONENTS
 import Button from '../button'
@@ -10,9 +10,15 @@ import {
   openOrCloseSidebar
 } from '../../store/reducer/modal-and-sidebar'
 import { clearCart } from '../../store/reducer/cart'
+import { usePurchaseMutation } from '../../services/api'
+import { RootReducer } from '../../store'
 
 const SidebarFinish = () => {
   const dispatch = useDispatch()
+  const { products, delivery, payment } = useSelector(
+    (state: RootReducer) => state.payment
+  )
+  const [purchase] = usePurchaseMutation()
   function sidebarChange(value: string) {
     dispatch(
       alteraSidebar({
@@ -20,9 +26,17 @@ const SidebarFinish = () => {
       })
     )
     dispatch(clearCart())
-
     dispatch(openOrCloseSidebar({ sidebarIsOpen: false }))
     dispatch(closeModal({ modalIsOpen: false }))
+    postProduct()
+  }
+
+  function postProduct() {
+    purchase({
+      products,
+      delivery,
+      payment
+    })
   }
   return (
     <S.ContainerFinish>
@@ -43,7 +57,7 @@ const SidebarFinish = () => {
         Esperamos que desfrute de uma deliciosa e agradável experiência
         gastronômica. Bom apetite!
       </S.ParagraphFinish>
-      <Button>
+      <Button type="button">
         <Link onClick={() => sidebarChange('cart')} to="/">
           Concluir
         </Link>

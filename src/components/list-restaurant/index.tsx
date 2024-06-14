@@ -5,6 +5,7 @@ import Restaurant from '../restaurant'
 import * as S from './style'
 import { getText } from '../../store/reducer/infos'
 import { useGetRestaurantsQuery } from '../../services/api'
+import Loader from '../loader'
 
 const RestaurantList = () => {
   const dispatch = useDispatch()
@@ -25,7 +26,7 @@ const RestaurantList = () => {
 
   const { data } = useGetRestaurantsQuery()
   if (!data) {
-    return <h2>Carregando..</h2>
+    return <Loader />
   }
   return (
     <S.ContainerCards>

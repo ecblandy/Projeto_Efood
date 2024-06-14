@@ -27,8 +27,8 @@ const Product = ({
   }
 
   const getDescricao = (descricao: string) => {
-    if (descricao.length > 170) {
-      return descricao.slice(0, 175) + '...'
+    if (descricao.length > 150) {
+      return descricao.slice(0, 160) + '...'
     }
     return descricao
   }
@@ -57,6 +57,7 @@ const Product = ({
         <S.DescriptionCard>{getDescricao(descricao)}</S.DescriptionCard>
 
         <Button
+          type="button"
           clicked={() =>
             verificaProduto({ id, descricao, foto, nome, porcao, preco })
           }

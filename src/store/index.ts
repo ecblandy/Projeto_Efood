@@ -4,6 +4,7 @@ import currentSidebar from './reducer/what-sidebar-is'
 import cart from './reducer/cart'
 import getInfosReducer from './reducer/infos'
 import RestaurantReducer from './reducer/restaurants'
+import paymentReducer from './reducer/payment'
 import API from '../services/api'
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     currentSidebar: currentSidebar,
     getInfosBanner: getInfosReducer,
     restaurant: RestaurantReducer,
+    payment: paymentReducer,
     [API.reducerPath]: API.reducer
   },
   middleware: (getDefaultMiddleware) =>

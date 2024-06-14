@@ -15,7 +15,9 @@ const Banner = () => {
           <div>
             <span key={infoBanner}>{infoBanner}</span>
           </div>
-          <h2>{titleBanner}</h2>
+          <div>
+            <h2>{titleBanner}</h2>
+          </div>
         </S.DivContent>
       </S.Container>
     </S.BackgroundDivImg>

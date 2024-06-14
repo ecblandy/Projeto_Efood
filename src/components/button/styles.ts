@@ -13,7 +13,7 @@ export const GlobalButton = styled.button`
   width: 82px;
   color: ${colors.mainColor};
   margin-bottom: 8px;
-  margin-left: 8px;
+
   margin-top: 8px;
   cursor: pointer;
 `

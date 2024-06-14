@@ -5,11 +5,12 @@ import Product from '../product'
 // UTILS
 import { RootReducer } from '../../store'
 import * as S from './styles'
+import Loader from '../loader'
 
 const Products = () => {
   const { cardapio } = useSelector((state: RootReducer) => state.getInfosBanner)
   if (!cardapio) {
-    return <h1>Carregando...</h1>
+    return <Loader />
   }
   return (
     <S.SectionContainer>

@@ -6,6 +6,7 @@ import { RootReducer } from '../../store'
 import { addCart } from '../../store/reducer/cart'
 import closeButton from '../../assets/img/close1.png'
 import * as S from './styles'
+import { addProduct } from '../../store/reducer/payment'
 
 type Props = {
   onClose: (value: boolean) => void
@@ -30,6 +31,7 @@ const Modal = ({ onClose }: Props) => {
       preco: item.preco
     }
     dispatch(addCart(product))
+    dispatch(addProduct({ id: item.id, price: item.preco }))
   }
 
   return (
@@ -43,13 +45,16 @@ const Modal = ({ onClose }: Props) => {
           {currentProduct.descricao}
           <br /> <br /> Serve de: {currentProduct.porcao}
         </S.DescriptionModal>
-        <Button clicked={() => addToCart(currentProduct)}>
+        <Button type="button" clicked={() => addToCart(currentProduct)}>
           Adicionar ao carrinho - R$ {currentProduct.preco}
         </Button>
       </S.ModalInfo>
-      <Button clicked={() => onClose(false)}>
-        <S.CloseModal src={closeButton} alt="Close Modal" />
-      </Button>
+
+      <S.CloseModal
+        onClick={() => onClose(false)}
+        src={closeButton}
+        alt="Close Modal"
+      />
     </S.ModalCard>
   )
 }

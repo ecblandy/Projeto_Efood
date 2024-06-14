@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const Card = styled.div`
   max-width: 472px;
@@ -9,6 +9,15 @@ export const Card = styled.div`
   margin-right: 80px;
   margin-bottom: 48px;
   position: relative;
+
+  > div {
+    padding: 8px;
+  }
+
+  @media (max-width: ${breakpoints.desktop}) {
+    margin-right: 0;
+    height: 90%;
+  }
   img {
     height: 217px;
     width: 100%;
@@ -33,8 +42,7 @@ export const CardSpan = styled.span`
 export const TitleDiv = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 8px;
-
+  padding-bottom: 16px;
   h2,
   div > span {
     font-weight: 700;
@@ -61,5 +69,5 @@ export const Description = styled.p`
   max-width: 456px;
   line-height: 20px;
   font-weight: 400;
-  padding: 8px;
+  padding-bottom: 8px;
 `

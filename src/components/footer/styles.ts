@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 import { EfoodLogo } from '../header/styles'
 
 export const FooterContainer = styled.footer`
@@ -30,4 +30,7 @@ export const TextFooter = styled.p`
   line-height: 22px;
   text-align: center;
   margin-bottom: 40px;
+  @media (max-width: ${breakpoints.mobile}) {
+    margin: 0 20px 40px;
+  }
 `

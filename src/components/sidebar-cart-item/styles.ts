@@ -4,7 +4,7 @@ import { colors } from '../../styles'
 export const ModalCartItem = styled.div`
   padding: 8px 8px 12px;
   background-color: ${colors.footer};
-  margin: 32px 8px 16px 8px;
+  margin: 64px 8px 16px 8px;
   display: flex;
   position: relative;
 

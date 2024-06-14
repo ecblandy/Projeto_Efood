@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const BackgroundDivImg = styled.div`
   width: 100%;
@@ -35,6 +35,14 @@ export const DivContent = styled.div`
   justify-content: space-between;
   height: 100%;
   font-size: 32px;
+  @media (max-width: ${breakpoints.tablet}) {
+    font-size: clamp(16px, 4.235vw, 32px);
+    text-align: center;
+    height: 90%;
+  }
+  @media (max-width: 1060px) {
+    margin-left: 30px;
+  }
   line-height: 37px;
   color: ${colors.mainColor};
   div {
@@ -45,8 +53,10 @@ export const DivContent = styled.div`
     }
   }
 
-  h2 {
+  div {
     margin-bottom: 32px;
-    font-weight: 900;
+    h2 {
+      font-weight: 900;
+    }
   }
 `

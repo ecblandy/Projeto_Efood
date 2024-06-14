@@ -5,7 +5,7 @@ import Products from '../../components/list-products'
 
 const RestaurantServices = () => (
   <>
-    <Header isprofilepage="profile" />
+    <Header $isprofilepage="profile" />
     <Banner />
     <Products />
     <Footer />

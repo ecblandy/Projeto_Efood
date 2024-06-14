@@ -1,11 +1,15 @@
 import styled from 'styled-components'
-import { colors } from '../../styles'
+import { breakpoints, colors } from '../../styles'
 
 export const CardProduct = styled.div`
   background-color: ${colors.backgroundColor};
   padding: 8px;
-  width: 320px;
+  max-width: 320px;
+  width: 100%;
   height: 340px;
+  @media (max-width: ${breakpoints.mobile}) {
+    height: 100%;
+  }
 
   img {
     width: 100%;

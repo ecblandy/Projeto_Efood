@@ -4,7 +4,7 @@ import RestaurantList from '../../components/list-restaurant'
 const Home = () => {
   return (
     <>
-      <Header isprofilepage="home" />
+      <Header $isprofilepage="home" />
       <RestaurantList />
       <Footer />
     </>

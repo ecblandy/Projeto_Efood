@@ -24,20 +24,22 @@ const Restaurant = ({ titulo, image, descricao, type, avaliacao }: Props) => {
   return (
     <S.Card>
       <img src={image} alt="" />
-      <div className="infos">
-        <S.CardSpan>{type}</S.CardSpan>
-      </div>
-      <S.TitleDiv>
-        <h2>{titulo}</h2>
-        <div className="note">
-          <span>{avaliacao}</span>
-          <img src={star} alt="" />
+      <div>
+        <div className="infos">
+          <S.CardSpan>{type}</S.CardSpan>
         </div>
-      </S.TitleDiv>
-      <S.Description>{getDescricao(descricao)}</S.Description>
-      <Link to="/loja">
-        <Button>Saiba mais</Button>
-      </Link>
+        <S.TitleDiv>
+          <h2>{titulo}</h2>
+          <div className="note">
+            <span>{avaliacao}</span>
+            <img src={star} alt="" />
+          </div>
+        </S.TitleDiv>
+        <S.Description>{getDescricao(descricao)}</S.Description>
+        <Link to="/loja">
+          <Button type="button">Saiba mais</Button>
+        </Link>
+      </div>
     </S.Card>
   )
 }
