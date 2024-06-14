@@ -34,7 +34,7 @@ export const DivContent = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  font-size: 32px;
+
   @media (max-width: ${breakpoints.tablet}) {
     font-size: clamp(16px, 4.235vw, 32px);
     text-align: center;
@@ -50,13 +50,16 @@ export const DivContent = styled.div`
     span {
       font-weight: 100;
       margin-right: 8px;
+      font-size: 32px;
     }
   }
 
   div {
     margin-bottom: 32px;
+
     h2 {
       font-weight: 900;
+      font-size: 32px;
     }
   }
 `
