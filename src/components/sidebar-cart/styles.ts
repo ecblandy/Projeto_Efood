@@ -5,6 +5,7 @@ export const InfoContainer = styled.div`
   flex-direction: column;
   margin-top: 40px;
   padding: 0px 8px;
+
   /* background-color: blue; */
 
   div {
@@ -26,4 +27,7 @@ export const InfoValue = styled.span`
   color: ${colors.footer};
   font-size: 14px;
   font-weight: 700;
+`
+export const SidebarContainer = styled.div`
+  margin-top: 64px;
 `

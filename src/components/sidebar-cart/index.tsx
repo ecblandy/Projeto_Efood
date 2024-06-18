@@ -28,7 +28,7 @@ const SidebarCart = () => {
   }
 
   return (
-    <div>
+    <S.SidebarContainer>
       {items.map(({ id, foto, nome, preco }) => (
         <SidebarItem key={id} foto={foto} nome={nome} id={id} preco={preco} />
       ))}
@@ -42,7 +42,7 @@ const SidebarCart = () => {
           Continuar com a entrega
         </Button>
       </S.InfoContainer>
-    </div>
+    </S.SidebarContainer>
   )
 }
 
