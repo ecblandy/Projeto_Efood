@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-const initialState: PurchasePayload = {
+const initialState: StatePurchase = {
   products: [],
   delivery: {
     receiver: '',
@@ -22,7 +22,8 @@ const initialState: PurchasePayload = {
         year: 0
       }
     }
-  }
+  },
+  orderId: ''
 }
 
 const paymentReducer = createSlice({
@@ -59,10 +60,13 @@ const paymentReducer = createSlice({
       const id = action.payload.id
       const price = action.payload.price
       state.products = [...state.products, { id, price }]
-      console.log(state.products)
+    },
+    addOrder: (state, action: PayloadAction<{ orderId: string }>) => {
+      state.orderId = action.payload.orderId
     }
   }
 })
 
 export default paymentReducer.reducer
-export const { addDelivery, addPayment, addProduct } = paymentReducer.actions
+export const { addDelivery, addPayment, addProduct, addOrder } =
+  paymentReducer.actions

@@ -8,11 +8,19 @@ import Button from '../button'
 // import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
 import { RootReducer } from '../../store'
 import { paraReal } from '../../utils/index'
-import { addPayment } from '../../store/reducer/payment'
+import { addOrder, addPayment } from '../../store/reducer/payment'
 import * as S from '../../styles'
 import { alteraSidebar } from '../../store/reducer/what-sidebar-is'
+import { usePurchaseMutation } from '../../services/api'
+
 const SidebarPayment = () => {
   const dispatch = useDispatch()
+
+  const { products, delivery, payment } = useSelector(
+    (state: RootReducer) => state.payment
+  )
+
+  const [purchase] = usePurchaseMutation()
 
   const { precoTotal } = useSelector((state: RootReducer) => state.cart)
   const inputHasError = (fieldName: string) => {
@@ -50,7 +58,6 @@ const SidebarPayment = () => {
         .required()
     }),
     onSubmit: (values) => {
-      console.log(values)
       dispatch(alteraSidebar({ currentSidebar: 'finish' }))
       dispatch(
         addPayment({
@@ -65,10 +72,29 @@ const SidebarPayment = () => {
               }
             }
           }
-        })
+        }),
+        postProduct()
       )
     }
   })
+
+  async function postProduct() {
+    const response = await purchase({
+      products,
+      delivery,
+      payment
+    })
+
+    if (response.data && response.data.orderId) {
+      console.log(
+        'Order ID recebido na função postProduct:',
+        response.data.orderId
+      )
+      dispatch(addOrder({ orderId: response.data.orderId }))
+    } else {
+      console.error('Erro ao receber o orderId:', response.error)
+    }
+  }
 
   return (
     <S.Container>

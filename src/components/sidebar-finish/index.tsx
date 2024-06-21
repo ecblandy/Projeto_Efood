@@ -10,15 +10,11 @@ import {
   openOrCloseSidebar
 } from '../../store/reducer/modal-and-sidebar'
 import { clearCart } from '../../store/reducer/cart'
-import { usePurchaseMutation } from '../../services/api'
 import { RootReducer } from '../../store'
 
 const SidebarFinish = () => {
   const dispatch = useDispatch()
-  const { products, delivery, payment } = useSelector(
-    (state: RootReducer) => state.payment
-  )
-  const [purchase] = usePurchaseMutation()
+  const { orderId } = useSelector((state: RootReducer) => state.payment)
   function sidebarChange(value: string) {
     dispatch(
       alteraSidebar({
@@ -28,19 +24,11 @@ const SidebarFinish = () => {
     dispatch(clearCart())
     dispatch(openOrCloseSidebar({ sidebarIsOpen: false }))
     dispatch(closeModal({ modalIsOpen: false }))
-    postProduct()
   }
 
-  function postProduct() {
-    purchase({
-      products,
-      delivery,
-      payment
-    })
-  }
   return (
     <S.ContainerFinish>
-      <S.TitleFinish>Pedido Realizado</S.TitleFinish>
+      <S.TitleFinish>Pedido Realizado - {orderId}</S.TitleFinish>
       <S.ParagraphFinish>
         Estamos felizes em informar que seu pedido já está em processo de
         preparação e, em breve, será entregue no endereço fornecido.

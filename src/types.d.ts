@@ -15,7 +15,7 @@ declare type Product = {
   price: number
 }
 
-declare type PurchasePayload = {
+declare interface PurchasePayload {
   products: Product[]
   delivery: {
     receiver: string
@@ -38,6 +38,10 @@ declare type PurchasePayload = {
       }
     }
   }
+}
+
+declare interface StatePurchase extends PurchasePayload {
+  orderId: string
 }
 
 declare type DeliveryPayload = {

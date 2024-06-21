@@ -3,6 +3,10 @@ import { Restaurant } from '../store/reducer/restaurants'
 
 const BASE_URL = 'https://fake-api-tau.vercel.app/'
 
+type ResponsePayload = {
+  orderId: string
+}
+
 const API = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: BASE_URL
@@ -11,7 +15,7 @@ const API = createApi({
     getRestaurants: builder.query<Restaurant[], void>({
       query: () => 'api/efood/restaurantes'
     }),
-    purchase: builder.mutation<unknown, PurchasePayload>({
+    purchase: builder.mutation<ResponsePayload, PurchasePayload>({
       query: (body) => ({
         url: 'api/efood/checkout',
         method: 'POST',

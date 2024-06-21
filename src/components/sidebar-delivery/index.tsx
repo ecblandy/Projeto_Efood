@@ -66,7 +66,6 @@ const SidebarDelivery = () => {
       number: Yup.string().required('O campo é obrigatorio')
     }),
     onSubmit: (values) => {
-      console.log(values)
       sidebarChange('payment')
       dispatch(
         addDelivery({
@@ -94,7 +93,6 @@ const SidebarDelivery = () => {
       const endpoint = `https://viacep.com.br/ws/${replace}/json/`
       const response = await fetch(endpoint)
       const data: ViaCepResponse = await response.json()
-      console.log(data)
       if (!data.erro) {
         form.setFieldValue('address', data.logradouro)
         form.setFieldValue('city', data.localidade)
